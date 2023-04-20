@@ -65,7 +65,7 @@ const CompoundDashboardTiles = memo(({ compound, datasetId }: Props) => {
     }
   };
 
-  const url = `/tile/compound/${tile.key}/${compound}?depDatasetName=RepAllSinglePt`;
+  const url = `/tile/compound/${tile.key}/${compound}?datasetName=${datasetId}`;
 
   return (
     <div className={styles.CompoundDashboardTiles}>
