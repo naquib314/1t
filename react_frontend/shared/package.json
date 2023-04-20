@@ -1,0 +1,17 @@
+{
+  "name": "shared",
+  "version": "0.0.2",
+  "description": "code shared between react_frontend and elara",
+  "author": "CDS Team <cds@broadinstitute.org>",
+  "license": "MIT",
+  "peerDependencies": {
+    "classnames": "^2.3.1",
+    "depmap-shared": "../depmap-shared/",
+    "react": "^16.9.35",
+    "react-bootstrap": "^0.32.3",
+    "react-select": "^3.2.0",
+    "react-dom": "^16.9.8",
+    "react-table-v7": "npm:react-table",
+    "react-tiny-virtual-list": "^2.2.0"
+  }
+}

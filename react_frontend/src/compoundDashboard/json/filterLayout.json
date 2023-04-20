@@ -1,0 +1,26 @@
+[
+  {
+    "label": "Biomarkers",
+    "groups": [
+      {
+        "keys": ["PearsonScore", "ModelType", "TopBiomarker(s)", "isConfounder"]
+      }
+    ]
+  },
+  {
+    "label": "Data",
+    "groups": [
+      {
+        "keys": ["BimodalityCoefficient", "NumberOfSensitiveLines", "Dose"]
+      }
+    ]
+  },
+  {
+    "label": "Drug annotation",
+    "groups": [
+      {
+        "keys": ["ClinicalPhase", "DiseaseArea", "Target", "MOA"]
+      }
+    ]
+  }
+]

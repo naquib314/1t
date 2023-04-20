@@ -1,0 +1,21 @@
+{
+  "depmap_model": {
+    "slice/lineage/1/label": "Lineage",
+    "slice/lineage/2/label": "Lineage Subtype",
+    "slice/primary_disease/all/label": "Primary Disease",
+    "slice/disease_subtype/all/label": "Disease Subtype",
+    "slice/tumor_type/all/label": "Tumor Type",
+    "slice/gender/all/label": "Gender",
+    "slice/growth_pattern/all/label": "Growth Pattern",
+    "slice/msi-0584.6/CCLE (NGS)/label": "Micro Satellite Instability (NGS)",
+    "slice/msi-0584.6/GDSC (PCR)/label": "Micro Satellite Instability (PCR)"
+  },
+  "gene": {
+    "slice/gene_essentiality/all/label": "Essentiality",
+    "slice/gene_selectivity/all/label": "Selectivity"
+  },
+  "compound_experiment": {
+    "slice/compound_experiment/compound_name/label": "Compound",
+    "slice/compound_experiment/compound_instance/label": "Experiment"
+  }
+}

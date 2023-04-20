@@ -1,0 +1,57 @@
+import CellignerCellLinesForTumorsControlPanel from "./CellignerCellLinesForTumorsControlPanel";
+
+const primarySites = [
+  "bone-pediatric",
+  "rhabdomyosarcoma",
+  "brain-pediatric",
+  "brain",
+  "leukemia",
+  "lymphoma",
+  "ewing_sarcoma",
+  "colorectal",
+  "neuroblastoma",
+  "soft_tissue",
+  "liver",
+  "pancreas",
+  "cervix",
+  "adrenal",
+  "endocrine",
+  "nasopharynx",
+  "kidney-pediatric",
+  "bone",
+  "rhabdoid",
+  "lung",
+  "upper_aerodigestive",
+  "thyroid",
+  "ovary",
+  "testis",
+  "bile_duct",
+  "teratoma",
+  "pineal",
+  "thymus",
+  "mesothelioma",
+  "skin",
+  "kidney",
+  "prostate",
+  "gastric",
+  "uterus",
+  "breast",
+  "urinary_tract",
+  "esophagus",
+  "eye",
+  "multiple_myeloma",
+  "fibroblast",
+];
+primarySites.sort();
+const defaultProps = {
+  primarySites,
+  selectedPrimarySites: primarySites,
+  colorByFeature: "cluster",
+};
+export default [
+  {
+    component: CellignerCellLinesForTumorsControlPanel,
+    name: "default",
+    props: defaultProps,
+  },
+];
