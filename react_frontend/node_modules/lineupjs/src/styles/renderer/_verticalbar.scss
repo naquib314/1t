@@ -1,0 +1,9 @@
+@import '../vars';
+
+.#{$lu_css_prefix}-renderer-verticalbar {
+  align-items: flex-end;
+
+  > div {
+    position: relative;
+  }
+}

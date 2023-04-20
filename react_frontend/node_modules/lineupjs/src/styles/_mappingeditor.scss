@@ -1,0 +1,140 @@
+@use 'sass:math';
+
+@import './vars';
+@import './icons/index';
+
+.#{$lu_css_prefix}-dialog-mapper {
+  width: 25em;
+
+  > .#{$lu_css_prefix}-summary {
+    height: 5em;
+    margin: 0.5em 3px 0;
+  }
+
+  input[type='number'] {
+    width: 5em;
+  }
+
+  &[data-scale='script'] .#{$lu_css_prefix}-dialog-mapper-script {
+    display: block;
+  }
+}
+
+div.#{$lu_css_prefix}-dialog-mapper-script {
+  display: none;
+
+  textarea {
+    height: 5em;
+    width: 98%;
+    font-size: 9pt;
+    display: block;
+  }
+}
+
+.#{$lu_css_prefix}-dialog-mapper-domain,
+.#{$lu_css_prefix}-dialog-mapper-range {
+  transform: translate(0, 24px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 14px;
+  border-bottom: 3px solid $lu_mapping_box;
+  padding: 0.4em 2px 20px;
+  text-align: center;
+}
+
+.#{$lu_css_prefix}-dialog-mapper-warning {
+  padding: 0 0.4em;
+  transform: translate(0, 10px);
+}
+
+.#{$lu_css_prefix}-dialog-mapper-range {
+  padding: 20px 2px 0.4em;
+  transform: translate(0, -24px);
+  border-bottom: none;
+  border-top: 3px solid $lu_mapping_box;
+  justify-content: space-around;
+}
+
+svg.#{$lu_css_prefix}-dialog-mapper-details {
+  shape-rendering: geometricprecision;
+  z-index: 1;
+  height: math.div(25em * 6, 10);
+  background: transparent;
+
+  rect {
+    fill: transparent;
+    stroke: none;
+  }
+
+  line {
+    stroke: $lu_mapping_handle;
+    stroke-width: 0.8;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+
+    &[data-v] {
+      stroke-opacity: 0.5;
+      stroke-width: 0.5;
+      stroke: $lu_mapping_line;
+      pointer-events: none;
+    }
+  }
+
+  circle {
+    fill: $lu_mapping_handle;
+  }
+}
+
+g.#{$lu_css_prefix}-dialog-mapper-mapping {
+  cursor: ew-resize;
+
+  > line:first-child {
+    stroke-width: 5;
+    stroke: transparent !important;
+  }
+
+  &.#{$lu_css_prefix}-frozen circle:first-of-type {
+    cursor: not-allowed;
+    fill: $lu_mapping_handle !important;
+    transform: scale(0.4);
+  }
+
+  &.#{$lu_css_prefix}-mapping-line-selected,
+  &:hover {
+    circle {
+      fill: $lu_mapping_hover;
+    }
+
+    line {
+      stroke: $lu_mapping_hover;
+    }
+  }
+
+  &.#{$lu_css_prefix}-frozen > .#{$lu_css_prefix}-dialog-mapper-mapping-domain {
+    display: none;
+  }
+}
+
+.#{$lu_css_prefix}-dialog-mapper-mapping-domain {
+  pointer-events: none;
+  font-size: 4px;
+}
+
+.#{$lu_css_prefix}-dialog-mapper-mapping-range {
+  pointer-events: none;
+  font-size: 4px;
+  dominant-baseline: hanging;
+}
+
+.#{$lu_css_prefix}-dialog-mapper-mapping-right {
+  text-anchor: end;
+}
+
+.#{$lu_css_prefix}-dialog-mapper-mapping-middle {
+  text-anchor: middle;
+}
+
+.#{$lu_css_prefix}-dialog-mapper[data-scale='script'] div.#{$lu_css_prefix}-dialog-mapper-script {
+  display: block;
+}

@@ -2,10 +2,6 @@ name: Build app
 
 on: push
 
-env:
-  DOCKER_REPO: us.gcr.io/broad-achilles/depmap
-  DOCKER_TAG: ga-build-${{ github.run_number }}
-
 jobs:
   run-frontend-tests:
     runs-on: ubuntu-latest
@@ -17,4 +13,3 @@ jobs:
         run: "NODE_OPTIONS='--openssl-legacy-provider' yarn --cwd react_frontend webpack --config=webpack.prod.js --progress"
       - name: Run tests
         run: yarn --cwd react_frontend jest
-        
