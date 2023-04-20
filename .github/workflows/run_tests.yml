@@ -7,6 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 19.4.0
       - name: Install yarn dependencies
         run: "NODE_OPTIONS='--openssl-legacy-provider' yarn --cwd react_frontend install"
       - name: Build webpack
