@@ -4,12 +4,18 @@ cat("Installing R dependencies...\n")
 cran_packages <- c(
     "magrittr", "tibble", "plyr", "feather", "dplyr",
     "RSQLite", "DBI", "WGCNA", "ashr", "corpcor", "tidyverse")
-all_packages <- c(cran_packages)
 
-install.packages(all_packages)
+bioconductor_packages <- c(
+    "impute", "rhdf5", "GO.db", "preprocessCore", "WGCNA")
+
+all_packages <- c(cran_packages, bioconductor_packages)
+
+install.packages(cran_packages, repos = "http://cran.us.r-project.org")
+source("https://bioconductor.org/biocLite.R")
+biocLite(bioconductor_packages)
 
 packages_installed <- all_packages %in% installed.packages()
-print(packages.installed)
+print(packages_installed)
 
 stopifnot(all(packages_installed))
 cat("Confirmed that all packages were successfully installed\n")
