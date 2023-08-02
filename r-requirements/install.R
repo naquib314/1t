@@ -2,8 +2,7 @@
 cat("Installing R dependencies...\n")
 
 cran_packages <- c(
-    "magrittr", "tibble", "plyr", "feather", "dplyr",
-    "RSQLite", "DBI", "WGCNA", "ashr", "corpcor", "tidyverse")
+    "WGCNA", "tidyverse")
 
 bioconductor_packages <- c(
     "BiocManager", "impute", "rhdf5", "GO.db", "preprocessCore", "WGCNA")
