@@ -6,13 +6,13 @@ cran_packages <- c(
     "RSQLite", "DBI", "WGCNA", "ashr", "corpcor", "tidyverse")
 
 bioconductor_packages <- c(
-    "impute", "rhdf5", "GO.db", "preprocessCore", "WGCNA")
+    "BiocManager", "impute", "rhdf5", "GO.db", "preprocessCore", "WGCNA")
 
-all_packages <- c(cran_packages, bioconductor_packages)
+all_packages <- c(cran_packages)
 
 install.packages(cran_packages, repos = "http://cran.us.r-project.org")
-source("https://bioconductor.org/biocLite.R")
-biocLite(bioconductor_packages)
+# source("https://bioconductor.org/biocLite.R")
+# biocLite(bioconductor_packages)
 
 packages_installed <- all_packages %in% installed.packages()
 print(packages_installed)
