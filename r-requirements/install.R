@@ -1,12 +1,13 @@
 #!/usr/bin/env Rscript
 print(R.Version())
 cat("Installing R dependencies...\n")
-install.packages("devtools")
+# install.packages("devtools")
+install.packages("BiocManager")
 bioconductor_packages <- c(
     "BiocManager", "impute")
 
-# cran_packages <- c(
-#     "impute", "preprocessCore", "GO.db", "AnnotationDbi", "WGCNA")
+cran_packages <- c(
+    "impute", "preprocessCore", "GO.db", "AnnotationDbi", "WGCNA")
 
 all_packages <- c(bioconductor_packages)
 
