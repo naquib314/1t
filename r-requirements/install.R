@@ -1,17 +1,22 @@
 #!/usr/bin/env Rscript
 cat("Installing R dependencies...\n")
 
-cran_packages <- c(
-    "impute", "preprocessCore", "GO.db", "AnnotationDbi", "WGCNA")
-
 bioconductor_packages <- c(
-    "BiocManager", "impute", "rhdf5", "GO.db", "preprocessCore", "WGCNA")
+    "BiocManager", "impute", "rhdf5", "GO.db",
+    "preprocessCore", "AnnotationDbi", "WGCNA")
 
-all_packages <- c(cran_packages)
+# cran_packages <- c(
+#     "impute", "preprocessCore", "GO.db", "AnnotationDbi", "WGCNA")
 
-install.packages(cran_packages, repos = "http://cran.us.r-project.org")
-# source("https://bioconductor.org/biocLite.R")
-# biocLite(bioconductor_packages)
+all_packages <- c(bioconductor_packages)
+
+# install.packages(cran_packages, repos = "http://cran.us.r-project.org")
+# if (!require("BiocManager", quietly = TRUE))
+#     install.packages("BiocManager")
+# BiocManager::install(version = "3.17")
+
+install.packages(
+    bioconductor_packages, repos = "http://bioconductor.org/packages/3.17/bioc")
 
 packages_installed <- all_packages %in% installed.packages()
 print(packages_installed)
