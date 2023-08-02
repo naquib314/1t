@@ -1,7 +1,7 @@
 #!/usr/bin/env Rscript
 print(R.Version())
 cat("Installing R dependencies...\n")
-# install.packages("devtools")
+install.packages("devtools")
 install.packages("BiocManager")
 bioconductor_packages <- c(
     "impute", "rhdf5", "GO.db", "preprocessCore", "WGCNA")
