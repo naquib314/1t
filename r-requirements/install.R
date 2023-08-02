@@ -1,4 +1,5 @@
 #!/usr/bin/env Rscript
+print(R.Version())
 cat("Installing R dependencies...\n")
 
 bioconductor_packages <- c(
