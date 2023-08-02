@@ -6,8 +6,8 @@ install.packages("BiocManager")
 bioconductor_packages <- c(
     "impute", "rhdf5", "GO.db", "preprocessCore", "WGCNA")
 
-cran_packages <- c(
-    "impute", "preprocessCore", "GO.db", "AnnotationDbi", "WGCNA")
+# cran_packages <- c(
+#     "impute", "preprocessCore", "GO.db", "AnnotationDbi", "WGCNA")
 
 all_packages <- c(bioconductor_packages)
 
