@@ -1,24 +1,25 @@
 #!/usr/bin/env Rscript
 cat("Installing R dependencies...\n")
 
-cran.packages <- c("magrittr", "tibble", "plyr", "feather", "dplyr", "RSQLite", "DBI", "WGCNA", "ashr", "corpcor", "tidyverse")
-bioconductor.packages <- c("impute", "rhdf5", "GO.db", "preprocessCore", "WGCNA")
-all.packages <- c(cran.packages, bioconductor.packages)
+cran_packages <- c("magrittr")
+bioconductor_packages <- c("impute")
+all_packages <- c(cran_packages, bioconductor_packages)
 
-packages.installed <- all.packages %in% installed.packages()
+packages_installed <- all_packages %in% installed_packages()
 
-if(!all(packages.installed) ) {
-    install.packages(cran.packages, repos="http://cran.us.r-project.org")
+if(!all(packages_installed)) {
+    install_packages(cran_packages, repos = "http://cran.us.r-project.org")
 
     if (!requireNamespace("BiocManager", quietly = TRUE))
-       install.packages("BiocManager", repos="http://bioconductor.org/packages/3.9/bioc")
+       install.packages("BiocManager", 
+       repos = "http://bioconductor.org/packages/3.9/bioc")
 
 
-    for (package in bioconductor.packages) {
+    for (package in bioconductor_packages) {
         BiocManager::install(package)
     }
 }
 
-packages.installed <- all.packages %in% installed.packages()
-stopifnot(all(packages.installed))
+packages_installed <- all_packages %in% installed_packages()
+stopifnot(all(packages_installed))
 cat("Confirmed that all packages were successfully installed\n")
