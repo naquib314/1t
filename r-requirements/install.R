@@ -2,7 +2,7 @@
 cat("Installing R dependencies...\n")
 
 cran_packages <- c(
-    "WGCNA", "tidyverse")
+    "impute", "preprocessCore", "GO.db", "AnnotationDbi", "WGCNA")
 
 bioconductor_packages <- c(
     "BiocManager", "impute", "rhdf5", "GO.db", "preprocessCore", "WGCNA")
