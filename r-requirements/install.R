@@ -8,7 +8,7 @@ all_packages <- c(cran_packages, bioconductor_packages)
 packages_installed <- all_packages %in% installed_packages()
 
 if(!all(packages_installed)) {
-    install_packages(cran_packages, repos = "http://cran.us.r-project.org")
+    install.packages(cran_packages, repos = "http://cran.us.r-project.org")
 
     if (!requireNamespace("BiocManager", quietly = TRUE))
        install.packages("BiocManager", 
