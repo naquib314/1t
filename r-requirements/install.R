@@ -4,8 +4,6 @@ cat("Installing R dependencies...\n")
 cran_packages <- c("magrittr")
 all_packages <- c(cran_packages)
 
-packages_installed <- all_packages %in% installed_packages()
-
 install.packages("magrittr")
 
 packages_installed <- all_packages %in% installed_packages()
