@@ -1,7 +1,7 @@
 #!/usr/bin/env Rscript
 print(R.Version())
 cat("Installing R dependencies...\n")
-
+install.packages("devtools")
 bioconductor_packages <- c(
     "BiocManager", "impute")
 
