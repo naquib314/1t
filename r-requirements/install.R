@@ -15,7 +15,7 @@ for (package in cran_packages) {
     install.packages(package)
 }
 
-for (package in bioconductor.packages) {
+for (package in bioconductor_packages) {
         BiocManager::install(package)
     }
 
