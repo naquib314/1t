@@ -1,0 +1,14 @@
+name: Build app 3
+
+on:
+    push:
+        paths:
+            - 'app3/**'
+
+jobs:
+  build-docker-image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: build depmap-base docker image
+        run: docker build -t depmap-base .

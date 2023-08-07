@@ -1,6 +1,9 @@
-name: Build app
+name: Build app 2
 
-on: push
+on:
+    push:
+        paths:
+            - 'app2/**'
 
 jobs:
   build-docker-image:
