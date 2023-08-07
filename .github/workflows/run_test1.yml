@@ -13,11 +13,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: build app 1 image if something changed in app1 directory
-        if: ${{ startsWith(github.event.head_commit.modified, 'app1/') }}
-        run: cd app1 && docker build -t app1 .
-      - name: build app 2 image if something changed in app2 directory
-        if: ${{ startsWith(github.event.head_commit.modified, 'app2/') }}
-        run: cd app2 && docker build -t app2 .
-      - name: build app 3 image if something changed in app3 directory
-        if: ${{ startsWith(github.event.head_commit.modified, 'app3/') }}
-        run: cd app3 && docker build -t app3 .
+        run: cd app1 && docker build -t app1 docker-test
+      #   if: ${{ startsWith(github.event.head_commit.modified, 'app1/') }}
+      #   run: cd app1 && docker build -t app1 .
+      # - name: build app 2 image if something changed in app2 directory
+      #   if: ${{ startsWith(github.event.head_commit.modified, 'app2/') }}
+      #   run: cd app2 && docker build -t app2 .
+      # - name: build app 3 image if something changed in app3 directory
+      #   if: ${{ startsWith(github.event.head_commit.modified, 'app3/') }}
+      #   run: cd app3 && docker build -t app3 .
