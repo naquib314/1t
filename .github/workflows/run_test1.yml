@@ -4,8 +4,7 @@ on:
   push:
     paths:
       - 'app1/**'
-      - 'app2/**'
-      - 'app3/**'
+      - '.github/workflows/**'
 env:
   DOCKERFILE_DIR: docker-test
 
