@@ -6,6 +6,8 @@ on:
       - 'app1/**'
       - 'app2/**'
       - 'app3/**'
+env:
+  DOCKERFILE_DIR: docker-test
 
 jobs:
   build-docker-image:
@@ -13,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: build app 1 image if something changed in app1 directory
-        run: cd app1 && docker build -t app1 docker-test
+        run: cd app1 && docker build -t app1 ${{ env.DOCKERFILE_DIR }}
       #   if: ${{ startsWith(github.event.head_commit.modified, 'app1/') }}
       #   run: cd app1 && docker build -t app1 .
       # - name: build app 2 image if something changed in app2 directory
