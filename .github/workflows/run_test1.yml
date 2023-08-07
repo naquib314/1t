@@ -5,6 +5,7 @@ on:
     paths:
       - 'app1/**'
       - '.github/workflows/app1.yml'
+      - 'app2/**'
 
 jobs:
   build-docker-image:
@@ -12,4 +13,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: build depmap-base docker image
-        run: cd app1 && docker build -t depmap-base .
+        # run: cd app1 && docker build -t depmap-base .
+        run: |
+          if [[ ${{ github.event.head_commit.modified | join(' ') }} == *"app1/"* ]]; then
+            cd app1 && docker build -t depmap-base .
+          elif [[ ${{ github.event.head_commit.modified | join(' ') }} == *"app2/"* ]]; then
+            cd app2 && docker build -t depmap-base .
+          fi
