@@ -4,7 +4,6 @@ on:
   push:
     paths:
       - 'app1/**'
-      - '.github/workflows/app1.yml'
       - 'app2/**'
 
 jobs:
@@ -17,12 +16,18 @@ jobs:
         run: |
           if [[ -n $(git diff --name-only HEAD^..HEAD app1/) ]]; then
             cd app1 && docker build -t depmap-base .
-          elif [[ -n $(git diff --name-only HEAD^..HEAD app2/) ]]; then
-            cd app2 && docker build -t depmap-base .
           fi
+        # elif [[ -n $(git diff --name-only HEAD^..HEAD app2/) ]]; then
+          #   cd app2 && docker build -t depmap-base .
+          # fi
 
 
-
+        #   - name: Build and push depmap base docker image
+        #   if: ${{ startsWith(github.event.head_commit.modified, 'path1/') }}
+        #   run: cd path1 && bash build.sh us.gcr.io/broad-achilles/image1 ga-build-${{ github.run_number }}
+        # - name: Build and push depmap base docker image
+        #   if: ${{ startsWith(github.event.head_commit.modified, 'path2/') }}
+        #   run: cd path2 && bash build.sh us.gcr.io/broad-achilles/image2 ga-build-${{ github.run_number }}
 
 
         # if [[ -n $(git diff --name-only HEAD^..HEAD path1/) ]]; then
