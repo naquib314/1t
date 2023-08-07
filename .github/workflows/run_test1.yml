@@ -15,8 +15,25 @@ jobs:
       - name: build depmap-base docker image
         # run: cd app1 && docker build -t depmap-base .
         run: |
-          if [[ ${{ github.event.head_commit.modified | join(' ') }} == *"app1/"* ]]; then
+          if [[ -n $(git diff --name-only HEAD^..HEAD app1/) ]]; then
             cd app1 && docker build -t depmap-base .
-          elif [[ ${{ github.event.head_commit.modified | join(' ') }} == *"app2/"* ]]; then
+          elif [[ -n $(git diff --name-only HEAD^..HEAD app2/) ]]; then
             cd app2 && docker build -t depmap-base .
           fi
+
+
+
+
+
+        # if [[ -n $(git diff --name-only HEAD^..HEAD path1/) ]]; then
+        #     cd path1 && bash build.sh us.gcr.io/broad-achilles/image1 ga-build-${{ github.run_number }}
+        #   elif [[ -n $(git diff --name-only HEAD^..HEAD path2/) ]]; then
+        #     cd path2 && bash build.sh us.gcr.io/broad-achilles/image2 ga-build-${{ github.run_number }}
+        #   else
+        #     echo "No changes detected in monitored paths. Exiting without building."
+        #   fi
+          # if [[ ${{ github.event.head_commit.modified | join(' ') }} == *"app1/"* ]]; then
+          #   cd app1 && docker build -t depmap-base .
+          # elif [[ ${{ github.event.head_commit.modified | join(' ') }} == *"app2/"* ]]; then
+          #   cd app2 && docker build -t depmap-base .
+          # fi
