@@ -11,4 +11,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: build depmap-base docker image
-        run: docker build -t depmap-base .
+        run: cd app3 && docker build -t depmap-base .
